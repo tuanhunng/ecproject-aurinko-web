@@ -301,7 +301,7 @@ function applyMedia(){document.querySelectorAll("[data-m]").forEach(function(e){
  if(y){el=document.createElement("iframe");el.src="https://www.youtube.com/embed/"+y[1];el.allowFullscreen=true;el.title="Aurinko video";el.referrerPolicy="strict-origin-when-cross-origin";el.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";el.style.cssText="position:absolute;inset:0;width:100%;height:100%;border:0"}
  else if(/\.(mp4|webm|mov|m4v|ogv)(\?|$)|^data:video/i.test(u)){el=document.createElement("video");el.src=u;el.playsInline=true;el.preload="metadata";
   if(LOOP[k]){el.muted=true;el.loop=true;el.autoplay=true;el.setAttribute("muted","")}else el.controls=true}
- else e.style.backgroundImage='url("'+u+'")';
+ else{e.style.backgroundImage='url("'+u+'")';e.style.backgroundSize=k=="logo"?"contain":"cover";e.style.backgroundPosition="center";e.style.backgroundRepeat="no-repeat"}
  if(el)e.appendChild(el);e.classList.add("has")})}
 var uid=0;
 function W(k,live){var o=K[k],i="w"+(++uid),n="",j,a,r1,r2;
