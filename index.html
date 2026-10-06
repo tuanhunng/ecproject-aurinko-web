@@ -84,7 +84,7 @@ section{padding:120px 0;position:relative;overflow:hidden}
 .pol ul{margin:0;padding-left:18px;color:var(--mute)}.pol li{margin-bottom:8px}
 .help{margin-top:64px;padding:36px 40px;background:var(--k);color:var(--on-k);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .help b{font:300 30px "Cormorant Garamond",serif;letter-spacing:.06em;color:var(--gold)}
-.help .eyebrow{margin-bottom:6px}
+.help .eyebrow{margin-bottom:6px}.help .ph{flex:1 1 100%;max-width:640px;margin:0 auto 12px;aspect-ratio:16/9}
 .own{background:var(--be);color:var(--be-ink)}
 .own .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:center}
 .own .eyebrow{color:#7a6a50}.own .f label{color:#6a5d4a}
@@ -246,7 +246,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <div class="rv"><h3 data-e>Warranty</h3><ul data-e><li>3-year movement warranty from the date of purchase.</li><li>Free repair of manufacturing defects.</li><li>Not covered: impact damage, water ingress beyond the rated resistance, or unauthorised opening of the case.</li></ul></div>
       <div class="rv"><h3 data-e>Care guide</h3><ul data-e><li>Wipe with a soft dry cloth; avoid chemicals and perfume.</li><li>Do not press the crown when the watch is wet or underwater.</li><li>Have mechanical watches serviced and re-oiled every 3–5 years.</li></ul></div>
     </div>
-    <div class="help"><div><p class="eyebrow">If your product has a fault</p><b data-e>Hotline: +84326478335</b></div><b data-e>customer.service@aurinko.com</b></div>
+    <div class="help"><div class="ph" data-m="group-pic" data-w="steel" role="img" aria-label="Aurinko team"></div><div><p class="eyebrow">If your product has a fault</p><b data-e>Hotline: +84326478335</b></div><b data-e>customer.service@aurinko.com</b></div>
   </div>
 </section>
 
@@ -295,10 +295,10 @@ him:"video/male.mp4",her:"video/female.mp4",
 "aamu-40":"products-collection/m1.jpg","ilta-42":"products-collection/m2.jpg","paiva-38":"products-collection/m3.jpg",
 "kulta-30":"products-collection/f1.jpg","valo-32":"products-collection/f2.jpg","hetki-34":"products-collection/f3.jpg",
 potw:"products-collection/m3.jpg","compare-aamu-40":"products-collection/m1.jpg","compare-ilta-42":"products-collection/m2.jpg",
-custom:"other-elements/cus.jpeg"};
+custom:"other-elements/cus.jpeg","group-pic":"other-elements/group-pic.jpg"};
 var LOOP={him:1,her:1};
 function applyMedia(){document.querySelectorAll("[data-m]").forEach(function(e){var k=e.dataset.m,u=MEDIA[k],y,el;if(!u)return;y=u.match(/(?:youtu\.be\/|embed\/|v=)([\w-]{11})/);
- if(y){el=document.createElement("iframe");el.src="https://www.youtube.com/embed/"+y[1];el.allowFullscreen=true;el.title="Aurinko video";el.style.cssText="position:absolute;inset:0;width:100%;height:100%;border:0"}
+ if(y){el=document.createElement("iframe");el.src="https://www.youtube.com/embed/"+y[1];el.allowFullscreen=true;el.title="Aurinko video";el.referrerPolicy="strict-origin-when-cross-origin";el.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";el.style.cssText="position:absolute;inset:0;width:100%;height:100%;border:0"}
  else if(/\.(mp4|webm|mov|m4v|ogv)(\?|$)|^data:video/i.test(u)){el=document.createElement("video");el.src=u;el.playsInline=true;el.preload="metadata";
   if(LOOP[k]){el.muted=true;el.loop=true;el.autoplay=true;el.setAttribute("muted","")}else el.controls=true}
  else e.style.backgroundImage='url("'+u+'")';
